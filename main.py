@@ -8,11 +8,11 @@ digits = datasets.load_digits()
 #clarifier
 clf = svm.SVC(gamma=0.001, C=100)
 
-x,y = digits.data[:-1], digits.target[:-1] #testing set, stores all but last data to test against the last data
+x,y = digits.data[:-10], digits.target[:-10] #testing set, stores all but last data to test against the last data
 clf.fit(x,y)
 
-print('Prediction:',clf.predict(digits.data[-1]))
+print('Prediction:',clf.predict(digits.data[[-1]]))
 
-plt.imshow(digits.images[-1], cmap=plt.cm.gray_r, interpolation="nearest")
+plot.imshow(digits.images[-1], cmap=plot.cm.gray_r, interpolation="nearest")
 
-plt.show()
+plot.show()
